@@ -5,7 +5,6 @@ export default function Home() {
       <div className="Category Box1">
         <h1>
           Testing
-          Testing
         </h1>
 
       </div>

@@ -2,9 +2,10 @@ import React from 'react'
 
 export default function Home() {
   const Home = 
-      <div className="CategoryBox">
+      <div className="Category Box1">
         <h1>
-          Test
+          Testing
+          Testing
         </h1>
 
       </div>

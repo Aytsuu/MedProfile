@@ -11,6 +11,10 @@ const SignUp = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showReEnterPassword, setShowReEnterPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confPassword, setConfPassword] = useState('');
 
   const togglePasswordVisibility = () => {
     setShowPassword((showPassword) => !showPassword);
@@ -19,6 +23,23 @@ const SignUp = () => {
   const toggleReEnterPasswordVisibility = () => {
     setShowReEnterPassword((showReEnterPassword) => !showReEnterPassword);
   };
+
+  const typedEmail = (e) =>{
+    setUsername(e.target.value)
+  }
+
+
+  const typedUsername = (e) =>{
+    setEmail(e.target.value)
+  }
+
+  const typedPassword = (e) =>{
+      setPassword(e.target.value)
+  }
+
+  const reEnterPassword = (e) =>{
+    setConfPassword(e.target.value)
+}
 
   const signup = (
     <div className="flex justify-center items-center h-screen w-full flex-col bg-none">
@@ -32,6 +53,8 @@ const SignUp = () => {
             placeholder="Email"
             required
             className= {SUfieldContentStyle}
+            onChange={typedEmail}
+            value={email}
           />
         </div>
 
@@ -42,6 +65,8 @@ const SignUp = () => {
             placeholder="Username"
             required
             className={SUfieldContentStyle}
+            onChange={typedUsername}
+            value={username}
           />
         </div>
 
@@ -52,13 +77,15 @@ const SignUp = () => {
             placeholder="Password"
             required
             className={SUfieldContentStyle}
+            onChange={typedPassword}
+            value={password}
           />
           <button
             type="button"
             onClick={togglePasswordVisibility}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
           >
-            {showPassword ? < FaEye /> : <FaEyeSlash />}
+            {password !== '' ? (showPassword ? <FaEye /> : <FaEyeSlash />) : ''}
           </button>
         </div>
 
@@ -69,13 +96,15 @@ const SignUp = () => {
             placeholder="Re-enter Password"
             required
             className={SUfieldContentStyle}
+            onChange={reEnterPassword}
+            value={confPassword}
           />
           <button
             type="button"
             onClick={toggleReEnterPasswordVisibility}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
           >
-            {showReEnterPassword ? < FaEye /> : <FaEyeSlash />}
+          {confPassword !== '' ? (showReEnterPassword ? <FaEye /> : <FaEyeSlash />) : ''}
           </button>
         </div>
 

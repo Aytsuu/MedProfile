@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 
@@ -7,11 +7,21 @@ const SignIn = () =>{
     //Sign In input fields style
     const SIfieldContentStyle = "w-full p-[clamp(0.5rem,0.7vw,1rem)] pl-10 border border-hoverloginBlue rounded outline-none";
 
+    const [showPassword, setShowPassword] = useState(false);
+    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+
     const togglePasswordVisibility = () => {
         setShowPassword((showPassword) => !showPassword);
       };
 
-    const [showPassword, setShowPassword] = useState(false);
+    const typedUsername = (e) =>{
+        setUsername(e.target.value)
+    }
+
+    const typedPassword = (e) =>{
+        setPassword(e.target.value)
+    }
 
     const signin = (
         <div className="flex justify-center items-center h-screen w-full flex-col bg-none">
@@ -25,6 +35,8 @@ const SignIn = () =>{
                     placeholder="Username/Email Address"
                     required
                     className={SIfieldContentStyle}
+                    onChange={typedUsername}
+                    value={username}
                   />
                 </div>
       
@@ -35,13 +47,15 @@ const SignIn = () =>{
                     placeholder="Password"
                     required
                     className={SIfieldContentStyle}
+                    onChange={typedPassword}
+                    value={password}
                   />
                   <button
                     type="button"
                     onClick={togglePasswordVisibility}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
                   >
-                    {showPassword ? <FaEye /> : <FaEyeSlash />}
+                    {password !== '' ? (showPassword ? <FaEye /> : <FaEyeSlash />) : ''}
                   </button>
                 </div>
       

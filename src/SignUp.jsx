@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 
-console.log(1)
-
 const AccManagement = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showReEnterPassword, setShowReEnterPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
+    setShowPassword((showPassword) => !showPassword);
   };
 
   const toggleReEnterPasswordVisibility = () => {
-    setShowReEnterPassword((prevShowReEnterPassword) => !prevShowReEnterPassword);
+    setShowReEnterPassword((showReEnterPassword) => !showReEnterPassword);
   };
 
   const signup = (
@@ -53,7 +51,7 @@ const AccManagement = () => {
             onClick={togglePasswordVisibility}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
           >
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
+            {showPassword ? < FaEye /> : <FaEyeSlash />}
           </button>
         </div>
 
@@ -70,7 +68,7 @@ const AccManagement = () => {
             onClick={toggleReEnterPasswordVisibility}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
           >
-            {showReEnterPassword ? <FaEyeSlash /> : <FaEye />}
+            {showReEnterPassword ? < FaEye /> : <FaEyeSlash />}
           </button>
         </div>
 

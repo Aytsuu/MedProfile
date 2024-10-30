@@ -29,7 +29,7 @@ function Forgotpass() {
               />
             </div>
           </div>
-
+          {/* back button and verify button */}
           <div className="flex mb-4 justify-center">
             <button
               type="button"

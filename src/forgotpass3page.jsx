@@ -5,10 +5,6 @@ import EyeIcon from './assets/EyeIcon.png';
 
 function Forgotpass() {
   
-  const handleResendClick = () => {
-    // function for resend click
-  };
-
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex items-center justify-center h-[50vh] bg-[#039BA9]">
@@ -17,6 +13,7 @@ function Forgotpass() {
         <h2 className="text-3xl font-bold mb-6 text-center text-[#013D43]">Account Recovery</h2>
         <form className="w-full flex flex-col items-center">
           <div className="flex flex-col w-[400px] mb-10">
+            {/* sa new password field */}
             <div className="relative mb-4">
               <input
                 type="password"
@@ -27,6 +24,7 @@ function Forgotpass() {
               />
               <img src={EyeIcon} alt="Eye Icon" className="absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6" />
             </div>
+            {/* sa re enter password field */}
             <div className="relative">
               <input
                 type="password"

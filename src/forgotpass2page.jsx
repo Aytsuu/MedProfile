@@ -3,10 +3,9 @@ import MailIcon from './assets/MailIcon.png';
 import ArrowIcon from './assets/Arrow.png';
 
 function Forgotpass() {
-  // Define the handleResendClick function
   const handleResendClick = () => {
-    // Add your resend logic here (e.g., an API call or alert)
-    console.log('Resend code clicked'); // Example action
+    // ari ang function para sa resend nga text
+    
   };
 
   return (
@@ -33,7 +32,7 @@ function Forgotpass() {
               {Array.from({ length: 5 }).map((_, index) => (
                 <input
                   key={index}
-                  type="text" // You can change this to "email" or other types as needed
+                  type="text" // change this to only dawat int and make this nga only 1 value ra iyang dawaton each field
                   id={`input${index + 1}`}
                   className="w-[60px] h-[60px] border border-gray-300 rounded text-center" // Set dimensions to create square fields
                   required

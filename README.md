@@ -1,8 +1,13 @@
-# React + Vite
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0d053b28-6e68-4ede-92b9-148c8fe73449" alt="Group 1" width="350" /> 
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Cooking 🧪 🫧
+---------
+**CTU students huddled together, building dreams one idea at a time.**
+---------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*Dont loop up the image* <br>
+[www.imgur.com/a/G6rU8](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+

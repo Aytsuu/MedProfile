@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        loginTextBlue: '#013D43',
         loginBlue: '#049CAA',
         hoverloginBlue: '#076B74'
       },

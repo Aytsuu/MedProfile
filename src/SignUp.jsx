@@ -82,7 +82,7 @@ const AccManagement = () => {
         </div>
 
         <div className="font-outfit text-loginBlue">
-          Already have an account? <a href=" " className="underline text-black-500 hover:hoverloginBlue">Use it</a>
+          Already have an account? <a className="underline text-black-500 hover:hoverloginBlue">Use it</a>
         </div>
 
       </form>
@@ -122,7 +122,7 @@ const AccManagement = () => {
             </div>
   
             <div className="mb-7 text-right text-[12px] font-outfit text-loginBlue">
-                <a href=" " className="underline text-black-500  hover:text-blue-700">Forgot Password?</a>
+                <a className="underline text-black-500  hover:text-blue-700">Forgot Password?</a>
             </div>
           
             <div className="font-outfit">
@@ -134,7 +134,7 @@ const AccManagement = () => {
             </div>
   
             <div className="font-outfit text-loginBlue">
-              Don't have an account? <a href=" " className="underline text-black-500 hover:text-blue-700">Create one</a>
+              Don't have an account? <a className="underline text-black-500 hover:text-blue-700">Create one</a>
             </div>
   
           </form>

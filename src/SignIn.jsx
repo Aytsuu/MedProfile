@@ -8,19 +8,20 @@ const SignIn = () =>{
     const SIfieldContentStyle = "w-full p-[clamp(0.5rem,0.7vw,1rem)] pl-10 border border-hoverloginBlue rounded outline-none";
     const SIfieldIcon = "absolute left-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue";
 
-    const [showPassword, setShowPassword] = useState(false);
+    // state for handling password visibility and input values
+    const [showPassword, setShowPassword] = useState(false); // sets the default value to false
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
 
-    const togglePasswordVisibility = () => {
+    const togglePasswordVisibility = () => { // function helps to hide/show the password
         setShowPassword((showPassword) => !showPassword);
       };
 
-    const typedUsername = (e) =>{
+    const typedUsername = (e) =>{ // Event handler for the username input
         setUsername(e.target.value)
     }
 
-    const typedPassword = (e) =>{
+    const typedPassword = (e) =>{ // Event handler for the password input
         setPassword(e.target.value)
     }
 
@@ -29,8 +30,8 @@ const SignIn = () =>{
               <h2 className="text-[35px] font-outfit mb-6 text-loginTextBlue">SIGN IN</h2>
               <form className="w-[clamp(250px,50%,400px)] text-center">
       
-                <div className="mb-7 font-outfit relative">
-                  <FaEnvelope className={SIfieldIcon} />
+                <div className="mb-7 font-outfit relative"> {/*input field for Username/Email*/}
+                  <FaEnvelope className={SIfieldIcon} /> {/*icon for the field*/}
                   <input
                     type="text"
                     placeholder="Username/Email Address"
@@ -41,30 +42,30 @@ const SignIn = () =>{
                   />
                 </div>
       
-                <div className="mb-2 font-outfit relative">
-                  <FaLock className={SIfieldIcon} />
+                <div className="mb-2 font-outfit relative"> {/*Input field for password*/}
+                  <FaLock className={SIfieldIcon} /> {/*icon for the field*/}
                   <input
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? "text" : "password"} // checks if the showpassword is true, if yes it will show text else shows dot dot dot haha
                     placeholder="Password"
                     required
                     className={SIfieldContentStyle}
                     onChange={typedPassword}
                     value={password}
                   />
-                  <button
+                  <button // button to show/hide password
                     type="button"
-                    onClick={togglePasswordVisibility}
+                    onClick={togglePasswordVisibility} // calls the function for hiding/showing password
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
                   >
-                    {password !== '' ? (showPassword ? <FaEye /> : <FaEyeSlash />) : ''}
+                    {password !== '' ? (showPassword ? <FaEye /> : <FaEyeSlash />) : ''} {/*changes the icon if there's a text in textfield*/}
                   </button>
                 </div>
       
-                <div className="mb-7 text-right text-[16px] font-outfit text-loginBlue">
+                <div className="mb-7 text-right text-[16px] font-outfit text-loginBlue"> {/*button link to "forgot password tab"*/}
                     <a className="underline text-loginTextBlue  hover:text-blue-700 cursor-pointer">Forgot Password?</a>
                 </div>
               
-                <div className="font-outfit">
+                <div className="font-outfit"> {/*button to login*/}
                   <button
                       type="submit"
                       className="mb-20 text-[23px] w-full p-[clamp(0.5rem,1vw,1rem)] bg-loginBlue text-white rounded hover:bg-hoverloginBlue">   
@@ -72,7 +73,7 @@ const SignIn = () =>{
                   </button>
                 </div>
       
-                <div className="font-outfit text-loginTextBlue">
+                <div className="font-outfit text-loginTextBlue"> {/*link button to create account*/}
                   Don't have an account? <Link to="/signup" className="underline text-loginTextBlue hover:text-blue-700 cursor-pointer" >Create one</Link>
                 </div>
       

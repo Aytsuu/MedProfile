@@ -6,6 +6,7 @@ const SignIn = () =>{
 
     //Sign In input fields style
     const SIfieldContentStyle = "w-full p-[clamp(0.5rem,0.7vw,1rem)] pl-10 border border-hoverloginBlue rounded outline-none";
+    const SIfieldIcon = "absolute left-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue";
 
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState('');
@@ -29,7 +30,7 @@ const SignIn = () =>{
               <form className="w-[clamp(250px,50%,400px)] text-center">
       
                 <div className="mb-7 font-outfit relative">
-                  <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue" />
+                  <FaEnvelope className={SIfieldIcon} />
                   <input
                     type="text"
                     placeholder="Username/Email Address"
@@ -41,7 +42,7 @@ const SignIn = () =>{
                 </div>
       
                 <div className="mb-2 font-outfit relative">
-                  <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue" />
+                  <FaLock className={SIfieldIcon} />
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"

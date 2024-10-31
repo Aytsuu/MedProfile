@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { GoLock } from "react-icons/go";
+import { FaRegUser } from "react-icons/fa6";
+import { MdOutlineMail } from "react-icons/md";
 import { Link } from 'react-router-dom'
 
 const SignUp = () => {
@@ -44,11 +47,11 @@ const SignUp = () => {
 
   const signup = (
     <div className="flex justify-center items-center h-screen w-full flex-col bg-none">
-      <h2 className="text-[35px] font-outfit mb-7 text-loginTextBlue">REGISTER ACCOUNT</h2>
+      <h2 className="text-[30px] font-outfit mb-7 text-loginTextBlue">REGISTER ACCOUNT</h2>
       <form className="w-[clamp(250px,50%,400px)] text-center">
 
         <div className={SUfieldStyle}> {/*Input field for Email*/}
-          <FaEnvelope className={SUfieldIcon} /> {/*icon for the field*/}
+          <MdOutlineMail className={SUfieldIcon} /> {/*icon for the field*/}
           <input
             type="email" 
             placeholder="Email"
@@ -60,7 +63,7 @@ const SignUp = () => {
         </div>
 
         <div className={SUfieldStyle}> {/*Input field for username*/}
-          <FaUser className={SUfieldIcon} /> {/*icon for the field*/}
+          <FaRegUser className={SUfieldIcon} /> {/*icon for the field*/}
           <input
             type="text"
             placeholder="Username"
@@ -72,7 +75,7 @@ const SignUp = () => {
         </div>
 
         <div className={SUfieldStyle}> {/*Input field for password*/}
-          <FaLock className={SUfieldIcon} /> {/*icon for the field*/}
+          <GoLock className={SUfieldIcon} /> {/*icon for the field*/}
           <input
             type={showPassword ? "text" : "password"} // checks if the showReEnterPassword is true, if yes it will show text else shows dot dot dot HAHA
             placeholder="Password"
@@ -86,12 +89,12 @@ const SignUp = () => {
             onClick={togglePasswordVisibility} // calls the function to hide/show password
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
           >
-            {password !== '' ? (showPassword ? <FaEye /> : <FaEyeSlash />) : ''} {/*changes the icon if there's a text in textfield*/}
+            {password !== '' ? (showPassword ? <FaRegEye /> : <FaRegEyeSlash />) : ''} {/*changes the icon if there's a text in textfield*/}
           </button>
         </div>
 
         <div className={SUfieldStyle}> {/*Input field for Re-enter password*/}
-          <FaLock className={SUfieldIcon} /> {/*icon for the field*/}
+          <GoLock className={SUfieldIcon} /> {/*icon for the field*/}
           <input
             type={showReEnterPassword ? "text" : "password"} // checks if the showReEnterPassword is true, if yes it will show text else shows dot dot dot haha
             placeholder="Re-enter Password"
@@ -105,14 +108,14 @@ const SignUp = () => {
             onClick={toggleReEnterPasswordVisibility} // calls the function to hide/shows password
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue"
           >
-            {confPassword !== '' ? (showReEnterPassword ? <FaEye /> : <FaEyeSlash />) : ''} {/*changes the icon if there's a text in textfield*/}
+            {confPassword !== '' ? (showReEnterPassword ? <FaRegEye /> : <FaRegEyeSlash />) : ''} {/*changes the icon if there's a text in textfield*/}
           </button>
         </div>
 
         <div className="mb-20 font-outfit text-white"> {/*Button to create account*/}
           <button
             type="submit"
-            className="text-[23px] w-full p-[clamp(0.5rem,1vw,1rem)] bg-loginBlue border-hoverloginBlue rounded hover:bg-hoverloginBlue"
+            className="text-[23px] w-full p-[clamp(0.5rem,0.6vw,1rem)] bg-loginBlue border-hoverloginBlue rounded hover:bg-hoverloginBlue"
           >
             Sign Up
           </button>

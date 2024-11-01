@@ -5,6 +5,7 @@ import SignUp from './SignUp.jsx'
 import FPgetEmail from './ForgotPassword-1.jsx'
 import FPgetCode from './EmailVerification.jsx'
 import FPnewPass from './ForgotPassword-2.jsx'
+import Background2 from './background/Background-2.jsx';
 
 const App = () =>{
   // Clean the local storage on initial run
@@ -15,7 +16,7 @@ const App = () =>{
     {
       // Default link to sign in page
       path: "/",
-      element: <SignIn/>
+      element: <Background2/>
     },
     {
       // Link to sign up page
@@ -36,7 +37,12 @@ const App = () =>{
       // Link to forgot password -- set new password page
       path: "/forgotpass-2",
       element: <FPnewPass/>
-    }
+    },
+    {
+      // Link to sign up -- email verification page
+      path: "/emailverification",
+      element: <FPgetCode type={"EMAIL VERIFICATION"}/>
+    },
   ])
 
   return(<>

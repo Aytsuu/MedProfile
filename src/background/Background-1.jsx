@@ -21,7 +21,7 @@ function Background1({onTransitionEnd, height, imageTop, state}){
                             style={{ top: `${imageTop}%` }}
                             /> 
                         </div>
-                        {/* bottom white backgroundd*/}
+                        {/* bottom white background*/}
                         <div
                             className={`absolute bg-white rounded-t-[50px] w-[100%] bottom-0 left-0 right-0 transform transition-transform duration-500 ease-in-out ${showWhiteLayer ? 'translate-y-0' : 'translate-y-full'}`} 
                             style={showWhiteLayer ? { height: `${height}%` } : {height: '0%'}}

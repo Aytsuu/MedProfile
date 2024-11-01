@@ -6,6 +6,7 @@ import { PiChalkboardTeacherFill } from "react-icons/pi"
 import { IoIosPeople } from "react-icons/io";
 import { IoMdFingerPrint } from "react-icons/io";
 import Background2 from './background/Background-2';
+import Header from './Header.jsx';
 
 
 export default function Home() {
@@ -53,42 +54,43 @@ export default function Home() {
           disabled:opacity-50 disabled:shadow-none ml-2" type="button`,
   }
 
-  const home = (
-    <div className="absolute font-outfit flex gap-[2.5vw] max-[500px]:flex-col my-auto bg-none h-screen w-screen items-center justify-center px-32">
-      <div className={`${boxStyles.box} ${boxStyles.student}`}>
-        <div className={boxStyles.logo_container}>
-          <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
-        </div>
-        <div className={boxStyles.text_student}>
-          <RiGraduationCapFill className={boxStyles.ico} />
-          <p>Student</p>
-        </div>
-      </div>
+  const home = (<>
+                  <div className="absolute font-outfit flex gap-[2.5vw] max-[500px]:flex-col my-auto bg-none h-screen w-screen items-center justify-center px-32">
+                    <div className={`${boxStyles.box} ${boxStyles.student}`}>
+                      <div className={boxStyles.logo_container}>
+                        <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
+                      </div>
+                      <div className={boxStyles.text_student}>
+                        <RiGraduationCapFill className={boxStyles.ico} />
+                        <p>Student</p>
+                      </div>
+                    </div>
 
-      <div className={`${boxStyles.box} ${boxStyles.teacher}`}>
-        <div className={boxStyles.logo_container}>
-          <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
-        </div>
-        <div className={boxStyles.text_teacher}>
-          <PiChalkboardTeacherFill className={boxStyles.ico} />
-          <p>Teacher</p>
-        </div>
-      </div>
+                    <div className={`${boxStyles.box} ${boxStyles.teacher}`}>
+                      <div className={boxStyles.logo_container}>
+                        <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
+                      </div>
+                      <div className={boxStyles.text_teacher}>
+                        <PiChalkboardTeacherFill className={boxStyles.ico} />
+                        <p>Teacher</p>
+                      </div>
+                    </div>
 
-      <div className={`${boxStyles.box} ${boxStyles.staff}`}>
-        <div className={boxStyles.logo_container}>
-          <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
-        </div>
-        <div className={boxStyles.text_staff}>
-          <IoIosPeople className={boxStyles.ico} />
-          <p>Staff</p>
-        </div>
-      </div>
+                    <div className={`${boxStyles.box} ${boxStyles.staff}`}>
+                      <div className={boxStyles.logo_container}>
+                        <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
+                      </div>
+                      <div className={boxStyles.text_staff}>
+                        <IoIosPeople className={boxStyles.ico} />
+                        <p>Staff</p>
+                      </div>
+                    </div>
 
-      <button className={buttonStyles.button}>Scan fingerprint <IoMdFingerPrint className="text-4xl" /> </button>
+                    <button className={buttonStyles.button}>Scan fingerprint <IoMdFingerPrint className="text-4xl" /> </button>
 
-    </div>
-  );
+                  </div>
+                  <Header/>
+                </>);
 
   const display = <>
                     <Background2 onTransitionEnd={handleTransitionEnd} />

@@ -8,17 +8,12 @@ import FPgetCode from './EmailVerification.jsx'
 import FPnewPass from './ForgotPassword-2.jsx'
 
 const App = () =>{
-
+  localStorage.removeItem('Return')
   // Create a routes that link buttons to other files/pages
   const router = createBrowserRouter([
     {
       // Default link to sign in page
       path: "/",
-      element: <SignIn/>
-    },
-    {
-      // Link to sign in page
-      path: "/signin",
       element: <SignIn/>
     },
     {

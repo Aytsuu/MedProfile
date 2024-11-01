@@ -1,6 +1,7 @@
 import React from 'react';
 import { GrLinkPrevious } from "react-icons/gr";
 import { Link } from 'react-router-dom';
+import Background1 from './background/background-1';
 
 function Forgotpass({type}) {
   const handleResendClick = () => {
@@ -8,11 +9,12 @@ function Forgotpass({type}) {
     
   };
 
-  const FPgetCode = <div className="flex justify-center items-center h-screen w-full flex-col bg-none">
-                        <div className="bg-none p-8 flex flex-col justify-center items-center">
+  const FPgetCode = <div className="absolute flex justify-center items-center h-screen w-full flex-col bg-none">
+                        <div className='w-[100%] h-[100%]'></div>
+                        <div className='flex justify-center w-[100%] h-[100%]'>
                             {/* This div represents the white bottom half with a rounded top */}
-                            <h2 className="text-[30px] mb-6 font-outfit text-center text-[#013D43]">{type}</h2>
                             <form className="w-full flex flex-col items-center">
+                                <h2 className="text-[30px] mb-6 font-outfit text-center text-[#013D43]">{type}</h2>
                                 <div className="flex flex-col w-[400px] mb-4">
                                     <label className="block text-[17px] font-outfit font-light text-[#013D43] mb-5">
                                     We’ve sent a verification code to your email address. Failed to receive the code?    
@@ -59,10 +61,13 @@ function Forgotpass({type}) {
                             </form>
                         </div>
                     </div>
+    
+    const display = <>
+                    <Background1 height={55} imageTop={10.5} state={2}/>
+                    {FPgetCode}
+                    </>
 
-    return (
-        FPgetCode
-    );
+    return (display);
 }
 
 export default Forgotpass;

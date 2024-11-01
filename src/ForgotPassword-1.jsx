@@ -6,7 +6,7 @@ import Background1 from './background/background-1';
 
 function ForgotPass_1() {
 
-    const onReturnSignIn = () => localStorage.setItem('Return', true)
+    const onReturnSignIn = () => localStorage.setItem('Return', true) // Function to store key value pair to local storage
 
     //Forgot Password input field styles
     const FPfieldStyle = "mb-7 font-outfit relative";

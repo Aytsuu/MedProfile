@@ -13,9 +13,9 @@ const SignUp = () => {
   const SUfieldContentStyle = "w-full p-[clamp(0.5rem,0.7vw,1rem)] pl-10 border border-hoverloginBlue rounded outline-none";
   const SUfieldIcon = "absolute left-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue";
 
-  //password visibility and input default values
-  const [showPassword, setShowPassword] = useState(false); // sets the default value to false
-  const [showReEnterPassword, setShowReEnterPassword] = useState(false);// sets the default value to false
+  // useStates for managing values or inputs
+  const [showPassword, setShowPassword] = useState(false); 
+  const [showReEnterPassword, setShowReEnterPassword] = useState(false); 
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +27,7 @@ const SignUp = () => {
   const typedUsername = (e) => setEmail(e.target.value) // Event handler for the username input
   const typedPassword = (e) => setPassword(e.target.value) // Event handler for the password input
   const reEnterPassword = (e) => setConfPassword(e.target.value) // Event handler for the re-enter password input
-  const onReturnSignIn = () => localStorage.setItem('Return', true)
+  const onReturnSignIn = () => localStorage.setItem('Return', true) // Function to store key value pair to local storage
 
 
   const signup = 

@@ -16,12 +16,12 @@ const SignIn = () =>{
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [showFields, setShowFields] = useState(false);
-    const isReturn = localStorage.getItem('Return') ? true : false;
+    const isReturn = localStorage.getItem('Return') ? true : false; // Check if item Return exists and assign boolean value to isReturn
 
     const togglePasswordVisibility = () => setShowPassword((showPassword) => !showPassword); // function helps to hide/show the password
     const typedUsername = (e) => setUsername(e.target.value) // Event handler for the username input
     const typedPassword = (e) => setPassword(e.target.value)// Event handler for the password input
-    const handleTransitionEnd = () => setShowFields(true); // Start the white background transition
+    const handleTransitionEnd = () => setShowFields(true); // To display the field after loading screen 
 
     const signin = 
             <div className={`absolute flex justify-center items-center h-screen w-full flex-col bg-none transition-opacity duration-500`}>
@@ -81,6 +81,7 @@ const SignIn = () =>{
       
     const display = 
                 <>
+                  {/* Condition whether to show loading screen (false) or not (true) */}
                   {isReturn ? 
                   <><Background1 height={55} imageTop={10.5} state={2}/>
                   {signin}</> :

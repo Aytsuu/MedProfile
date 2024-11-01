@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import './App.css'
 import SignIn from './SignIn.jsx'
@@ -8,7 +7,9 @@ import FPgetCode from './EmailVerification.jsx'
 import FPnewPass from './ForgotPassword-2.jsx'
 
 const App = () =>{
+  // Clean the local storage on initial run
   localStorage.removeItem('Return')
+
   // Create a routes that link buttons to other files/pages
   const router = createBrowserRouter([
     {

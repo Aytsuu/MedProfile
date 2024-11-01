@@ -10,7 +10,7 @@ function LoadingScreen({ onTransitionEnd }) {
       setIsTransitioning(true);
       
       // End transition after animation completes
-      setTimeout(onTransitionEnd, 100); // 1 millisecond for full transition
+      setTimeout(onTransitionEnd, 100); // 100 milliseconds for full transition
     }, 2000); // Initial delay before transition starts
 
     return () => clearTimeout(timer);

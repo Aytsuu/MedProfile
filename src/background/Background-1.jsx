@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DoctorImg from '../assets/doctor.svg'
 import LoadingScreen from "../loadingscreen/LoadingScreen";
 
@@ -51,9 +51,7 @@ function Background1({onTransitionEnd, height, imageTop, state}){
     
     switch (state) {
         case 1: return(initial)
-                break;  
         case 2: return(final)
-                break;
     }
 }
 

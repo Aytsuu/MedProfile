@@ -1,29 +1,12 @@
-import { useState } from 'react'
-import { createBrowserRouter, RouterProvider} from 'ract-reouter-dom';
 import './App.css'
-import SignIn from './SignIn.jsx'
-import SignUp from './SignUp.jsx'
+import Sidebar from './Sidebar'
 
-const App = () =>{
-
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <SignIn/>
-    },
-    {
-      path: "/signin",
-      element: <SignIn/>
-    },
-    {
-      path: "/signup",
-      element: <SignUp/>
-    },
-  ])
-
-  return(<>
-          <RouterProvider router={router}/>
-        </>);
+function App() {
+  return(
+    <div>
+        <Sidebar></Sidebar>
+    </div>
+  )
 }
 
 export default App

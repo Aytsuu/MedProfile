@@ -11,10 +11,10 @@ function Apptwo() {
 
   return (
     <div className="h-screen w-screen relative overflow-hidden">
-      {/* Teal background component */}
+      {/* background component */}
       <InitialTransitionTwo onTransitionEnd={handleTransitionEnd} />
 
-      {/* White background transitioning upwards over the teal background */}
+      {/* White background transitioning upwards over the background */}
       <div
         className={`bg-white h-screen absolute bottom-0 left-0 right-0 transform transition-transform duration-500 ease-in-out ${
           showWhiteLayer ? 'translate-y-0' : 'translate-y-full'

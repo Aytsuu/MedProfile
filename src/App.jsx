@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="h-screen w-screen relative overflow-hidden">
-      {/* Initial teal background remains in place */}
+      {/* Initial background remains in place */}
       <InitialTransition onTransitionEnd={handleTransitionEnd} />
 
       {/* Doctor image positioned above the white background */}

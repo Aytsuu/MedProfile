@@ -8,6 +8,6 @@
 **CTU students huddled together, building dreams one idea at a time.**
 ---------
 
-*Dont loop up the image* <br>
+*dont loop up the image* <br>
 [www.imgur.com/a/G6rU8](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 

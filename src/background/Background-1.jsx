@@ -6,7 +6,7 @@ function Background1({onTransitionEnd, height, imageTop, state}){
     const [showWhiteLayer, setShowWhiteLayer] = useState(false);
 
     const handleTransitionEnd = () => {
-        if(showWhiteLayer) onTransitionEnd && onTransitionEnd() // Call the onTransitionEnd only when the white layer has fully show
+        if(showWhiteLayer) onTransitionEnd() // Call the onTransitionEnd only when the white layer has fully show
         else setShowWhiteLayer(true); // Start the white background transition
     };
 

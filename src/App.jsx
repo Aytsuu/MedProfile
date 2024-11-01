@@ -5,7 +5,7 @@ import SignUp from './SignUp.jsx'
 import FPgetEmail from './ForgotPassword-1.jsx'
 import FPgetCode from './EmailVerification.jsx'
 import FPnewPass from './ForgotPassword-2.jsx'
-import Background2 from './background/Background-2.jsx';
+import Home from './HomePage.jsx';
 
 const App = () =>{
   // Clean the local storage on initial run
@@ -16,7 +16,7 @@ const App = () =>{
     {
       // Default link to sign in page
       path: "/",
-      element: <Background2/>
+      element: <Home/>
     },
     {
       // Link to sign up page

@@ -6,13 +6,12 @@ import FPgetEmail from './ForgotPassword-1.jsx'
 import FPgetCode from './EmailVerification.jsx'
 import FPnewPass from './ForgotPassword-2.jsx'
 import Home from './HomePage.jsx';
-import Header from './Header.jsx';
 
 const App = () =>{
   // Clean the local storage on initial run
   localStorage.removeItem('Return')
 
-  // Create a routes that link buttons to other files/pages
+  // Create routes that link buttons to other files/pages
   const router = createBrowserRouter([
     {
       // Default link to sign in page

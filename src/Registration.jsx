@@ -131,7 +131,7 @@ function Registration() {
                                 <MdArrowCircleLeft size="30" />
                             </button>
                         
-                        <button type="submit" // change type to submit
+                        <button type="submit"
                             className="flex h-10 w-auto m-2 bg-teal-500 rounded-md items-center justify-center
                                 hover:bg-teal-900">
                             <div className="flex items-center space-x-3 pr-4 pl-4">

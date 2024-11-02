@@ -17,10 +17,9 @@ function Sidebar(){
             <SideBarIcon icon={<MdGroups size="40"/>} text="Records" onClick={() => navigate('/records')} />
             <SideBarIcon icon={<MdOutlineFingerprint size="40"/>} text="Scan Fingerprint"/>
             <SideBarIcon icon={<MdArrowCircleLeft size="40"/>} text="Exit"/>
-
+            
         </div>
     );
-    return sideBar
 }
 
 const SideBarIcon = ({icon, text, onClick}) => (

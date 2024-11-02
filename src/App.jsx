@@ -1,11 +1,20 @@
 import './App.css'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from './Sidebar'
+import Registration from './Registration'
+import Records from './Records'
 
 function App() {
   return(
-    <div>
-        <Sidebar></Sidebar>
-    </div>
+    <Router>
+      <div>
+        <Sidebar/>
+        <Routes>  
+          <Route path="/register" element={<Registration/>} />
+          <Route path="/records"  element={<Records/>} />
+        </Routes>
+      </div>  
+    </Router>
   )
 }
 

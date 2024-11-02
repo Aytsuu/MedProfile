@@ -12,6 +12,7 @@ function App() {
         <Routes>  
           <Route path="/register" element={<Registration/>} />
           <Route path="/records"  element={<Records/>} />
+          {/* Tentative cause instead of Registration it should be the profile panel */}
           <Route path="/profile" element={<Registration/>}/>
         </Routes>
       </div>  

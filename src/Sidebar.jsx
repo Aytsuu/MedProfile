@@ -20,6 +20,8 @@ function Sidebar(){
             
         </div>
     );
+    
+    return sideBar
 }
 
 const SideBarIcon = ({icon, text, onClick}) => (

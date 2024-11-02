@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from './Sidebar'
 import Registration from './Registration'
 import Records from './Records'
-import ScanOverlay from './ScanOverlay';
 
 function App() {
   return(

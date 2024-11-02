@@ -8,7 +8,7 @@ function RecordSelection(){
 
 
     const selected = <>
-                        <Background2/>
+                        <Background2 state={2}/>
                         <Sidebar/>
                         <Header/>
                     </>

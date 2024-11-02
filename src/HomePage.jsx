@@ -93,7 +93,7 @@ export default function Home() {
                 </>);
 
   const display = <>
-                    <Background2 onTransitionEnd={handleTransitionEnd} />
+                    <Background2 onTransitionEnd={handleTransitionEnd} state={1}/>
                     {showHomePage && home}
                   </>
 

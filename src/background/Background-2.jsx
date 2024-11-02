@@ -2,7 +2,7 @@ import { useState } from 'react';
 import LoadingScreen from '../loadingscreen/LoadingScreen';
 import BackgroundWhite from '../assets/bgWhite.svg'
 
-function Background2({onTransitionEnd}) {
+function Background2({onTransitionEnd, state}) {
   const [showWhiteLayer, setShowWhiteLayer] = useState(false);
 
   const handleTransitionEnd = () => {
@@ -22,9 +22,18 @@ function Background2({onTransitionEnd}) {
                     />
                   </div>
 
-  return (
-          initial
-        );
+  const final = <div className="absolute h-screen w-screen overflow-hidden bg-gradient-to-t from-[#013D43] to-[#039BA9]" >
+                  <img
+                    src={BackgroundWhite}
+                    className={`h-[105%] absolute bottom-0 left-0 right-0`}   
+                        style={{ objectFit: 'cover' }}
+                  />
+                </div>
+
+  switch (state) {
+    case 1: return initial
+    case 2: return final
+  }
 }
 
 export default Background2;

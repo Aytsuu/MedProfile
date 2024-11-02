@@ -9,7 +9,8 @@ export default {
       colors: {
         loginTextBlue: '#013D43',
         loginBlue: '#049CAA',
-        hoverloginBlue: '#076B74'
+        hoverloginBlue: '#076B74',
+        textColor: '#013D43'
       },
       fontFamily: {
         outfit: ["'Outfit'", "sans-serif"],  // Define the font family properly here

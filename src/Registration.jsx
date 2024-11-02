@@ -128,16 +128,16 @@ function Registration() {
                     </div>
 
                     <div className="flex flex-row space-x-3 mt-16">
-                        <button type="button" className="flex h-10 w-20 m-2 border-2 rounded-md hover:bg-neutral-500 hover:rounded-lg items-center justify-center">
-                            <MdArrowCircleLeft size="20" />
-                        </button>
+                        <button type="button" className="flex h-10 w-20 m-2 border-1 shadow-lg drop-shadow-lg rounded-md hover:bg-cyan-300 hover:rounded-lg items-center justify-center">
+                                <MdArrowCircleLeft size="30" />
+                            </button>
                         
                         <button type="submit" // change type to submit
-                            className="flex h-10 w-2/12 m-2 bg-teal-500 rounded-md items-center justify-center
+                            className="flex h-10 w-auto m-2 bg-teal-500 rounded-md items-center justify-center
                                 hover:bg-teal-900">
-                            <div className="flex items-center space-x-3">
+                            <div className="flex items-center space-x-3 pr-4 pl-4">
                                 <h1 className="text-white font-semibold">Next</h1>
-                                <MdArrowCircleRight size="20" />
+                                <MdArrowCircleRight size="30" />
                             </div>
                         </button>
                     </div>

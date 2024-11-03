@@ -4,6 +4,7 @@ import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { GrLinkPrevious } from "react-icons/gr";
 import { GoLock } from "react-icons/go";
 import Background1 from './background/background-1';
+import Logo from './background/Logo';
 
 function Forgotpass() {
 
@@ -34,7 +35,10 @@ function Forgotpass() {
     const FPfieldContentStyle = "w-full p-[clamp(0.5rem,0.7vw,1rem)] pl-10 border border-hoverloginBlue rounded outline-none";
     const FPfieldIcon = "absolute left-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue";
 
-    const FPnewPass = <div className='absolute flex justify-center items-center h-screen w-full flex-col bg-none'>
+    const FPnewPass = 
+                <>
+                    <Logo/>
+                    <div className='absolute flex justify-center items-center h-screen w-full flex-col bg-none'>
                         <div className='w-[100%] h-[100%]'></div>
                         <div className='flex justify-center w-[100%] h-[100%]'>
                             <form className="w-full flex flex-col items-center">
@@ -102,6 +106,7 @@ function Forgotpass() {
                             </form>
                         </div>
                     </div>
+                </>
                     
     const display = <>
                     <Background1 height={55} imageTop={10.5} state={2}/>

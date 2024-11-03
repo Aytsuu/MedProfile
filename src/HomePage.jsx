@@ -10,6 +10,9 @@ import Header from './Header.jsx';
 import Sidebar from './sidebar/Sidebar.jsx';
 
 export default function Home() {
+
+  // Clean the local storage on home page entry
+  localStorage.removeItem('Return')
   
   const [showHomePage, setShowHomePage] = useState(false)
   const [isCategorySelected, setIsCategorySelected] = useState(false)
@@ -30,7 +33,6 @@ export default function Home() {
   const handleTeacherSelection = () => {setIsTeacherSelected(true); setIsCategorySelected(true)}
   const handleStaffSelection = () => {setIsStaffSelected(true); setIsCategorySelected(true)}
 
-  console.log(state)
 
   // box styles
   const boxStyles = {

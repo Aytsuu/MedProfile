@@ -5,6 +5,7 @@ import { FaRegUser } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import { Link } from 'react-router-dom'
 import Background1 from './background/background-1';
+import Logo from './background/Logo';
 
 const SignUp = () => {
 
@@ -32,6 +33,7 @@ const SignUp = () => {
 
   const signup = 
       <>
+        <Logo/>
         <div className="absolute flex justify-center items-center h-screen w-full flex-col bg-none">
           <div className='w-[100%] h-[90%]'></div>
 

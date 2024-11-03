@@ -4,6 +4,7 @@ import { GoLock } from "react-icons/go";
 import { MdOutlineMail } from "react-icons/md";
 import { Link } from 'react-router-dom'
 import Background1 from './background/background-1';
+import Logo from './background/Logo';
 
 const SignIn = () =>{
   
@@ -24,6 +25,8 @@ const SignIn = () =>{
     const handleTransitionEnd = () => setShowFields(true); // To display the field after loading screen 
 
     const signin = 
+          <>
+            <Logo/>
             <div className={`absolute flex justify-center items-center h-screen w-full flex-col bg-none transition-opacity duration-500`}>
               <div className='w-[100%] h-[100%]'></div>
               <div className='flex justify-center w-[100%] h-[100%]'>
@@ -80,6 +83,7 @@ const SignIn = () =>{
                 </form>
               </div>
             </div> 
+          </>
       
     const display = 
                 <>

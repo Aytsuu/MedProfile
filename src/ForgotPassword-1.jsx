@@ -3,6 +3,7 @@ import { MdOutlineMail } from 'react-icons/md'
 import { GrLinkPrevious } from "react-icons/gr";
 import { Link } from 'react-router-dom'
 import Background1 from './background/background-1';
+import Logo from './background/Logo';
 
 function ForgotPass_1() {
 
@@ -13,7 +14,10 @@ function ForgotPass_1() {
     const FPfieldContentStyle = "w-full p-[clamp(0.5rem,0.7vw,1rem)] pl-10 border border-hoverloginBlue rounded outline-none";
     const FPfieldIcon = "absolute left-3 top-1/2 transform -translate-y-1/2 text-hoverloginBlue";
 
-    const FPgetEmail = <div className='absolute flex justify-center items-center h-screen w-full flex-col bg-none'>
+    const FPgetEmail = 
+                    <>
+                        <Logo/>
+                        <div className='absolute flex justify-center items-center h-screen w-full flex-col bg-none'>
                             <div className='w-[100%] h-[100%]'></div>
                             <div className='flex justify-center w-[100%] h-[100%]'>
                                 {/* This div represents the white bottom half with a rounded top */}
@@ -56,6 +60,7 @@ function ForgotPass_1() {
                             </form>
                             </div>
                         </div>
+                    </>
 
     const display = <>
                     <Background1 height={55} imageTop={10.5} state={2}/>

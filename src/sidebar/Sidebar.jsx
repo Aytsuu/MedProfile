@@ -5,7 +5,7 @@ import { MdGroups} from "react-icons/md";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { IoFingerPrint } from "react-icons/io5";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Registration from "../Registration";
 import Records from "../Records";
@@ -27,24 +27,39 @@ const sideBarStyle = {
     
                     }
 
-function Sidebar(){    
-
-    const navigate = useNavigate();
+function Sidebar({onSelectionExit}){    
 
     const [isScanOverlayVisible, setScanOverlayVisible] = useState(false) // State to control overlay visibility
+    const [onSelection, setOnSelection] = useState(false)
+    const [toReturn, setToReturn] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
     const [isRecords, setIsRecords] = useState(false)
 
+    localStorage.setItem('ReturnFromSelection', toReturn)
+
     const handleScanClick = () => setScanOverlayVisible(true) // Show the overlay when the icon is clicked
     const handleRegistrationClick = () => {
+        setOnSelection(true)
         setIsRegister(true)
         isRecords && setIsRecords(false)
     }
     const handleRecordsClick = () => {
+        setOnSelection(true)
         setIsRecords(true)
         isRegister && setIsRegister(false)
     }
     
+    const handleReturnClick = () => {
+        if(onSelection){
+            setIsRecords(false)
+            setIsRegister(false)
+            setOnSelection(false)
+        }
+        else {
+            setToReturn(true)
+            onSelectionExit()
+        }
+    }
 
     const closeOverlay = () => setScanOverlayVisible(false) // Function to hide the overlay
 
@@ -57,17 +72,20 @@ function Sidebar(){
             <SideBarIcon icon={<BsFillPlusCircleFill size="40"/>} text = "Register" onClick={handleRegistrationClick} />
             <SideBarIcon icon={<MdGroups size="40"/>} text="Records" onClick={handleRecordsClick} />
             <SideBarIcon icon={<IoFingerPrint size="40"/>} text="Scan Fingerprint" onClick={handleScanClick}/>
-            <SideBarIcon icon={<BsArrowLeftCircleFill size="40"/>} text="Exit" onClick={() => {setIsRegister(false); setIsRecords(false)}}/>
+            <SideBarIcon icon={<BsArrowLeftCircleFill size="40"/>} text="Exit" onClick={handleReturnClick}/>
             
         </div>
     );
     
     return (
-        <>
-            {isRegister && <Registration/>}
-            {isRecords && <Records/>}
-            {sideBar}
-            {/* {isScanOverlayVisible && <ScanOverlay onClose={closeOverlay} />} Render the overlay conditionally */}
+        <>  { !toReturn &&
+                <>
+                    {isRegister && <Registration/>}
+                    {isRecords && <Records/>}
+                    {sideBar}
+                    {/* {isScanOverlayVisible && <ScanOverlay onClose={closeOverlay} />} Render the overlay conditionally */}
+                </>
+            }
         </>
     );
 }

@@ -3,12 +3,10 @@ import Sidebar from "./sidebar/Sidebar"
 import Header from "./Header"
 
 
-function RecordSelection(){
+function RecordSelection({backgroundColor}){
     
-
-
     const selected = <>
-                        <Background2 state={2}/>
+                        <Background2 backgroundColor={backgroundColor} state={2}/>
                         <Sidebar/>
                         <Header/>
                     </>

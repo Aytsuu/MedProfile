@@ -1,5 +1,5 @@
 // Imports
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CTU_LOGO from './assets/CTU_LOGO.png'
 import { RiGraduationCapFill } from "react-icons/ri"
 import { PiChalkboardTeacherFill } from "react-icons/pi"
@@ -7,13 +7,29 @@ import { IoIosPeople } from "react-icons/io";
 import { IoMdFingerPrint } from "react-icons/io";
 import Background2 from './background/Background-2';
 import Header from './Header.jsx';
-
+import RecordSelection from './RecordSelection.jsx';
+import Sidebar from './sidebar/Sidebar.jsx';
 
 export default function Home() {
-
+  
   const [showHomePage, setShowHomePage] = useState(false)
+  const [isCategorySelected, setIsCategorySelected] = useState(false)
+  const [isStudentSelected, setIsStudentSelected] = useState(false)
+  const [isTeacherSelected, setIsTeacherSelected] = useState(false)
+  const [isStaffSelected, setIsStaffSelected] = useState(false)
+  const [state, setState] = useState(1)
 
   const handleTransitionEnd = () => setShowHomePage(true); // Display home page
+  const handleSelectionExit = () => {
+    setIsCategorySelected(false)
+    localStorage.removeItem('ReturnFromSelection')
+    setState(2)
+  }
+  const handleStudentSelection = () => {setIsStudentSelected(true); setIsCategorySelected(true)}
+  const handleTeacherSelection = () => {setIsTeacherSelected(true); setIsCategorySelected(true)}
+  const handleStaffSelection = () => {setIsStaffSelected(true); setIsCategorySelected(true)}
+
+  console.log(state)
 
   // box styles
   const boxStyles = {
@@ -56,7 +72,7 @@ export default function Home() {
 
   const home = (<>
                   <div className="absolute font-outfit flex gap-[2.5vw] max-[500px]:flex-col my-auto bg-none h-screen w-screen items-center justify-center px-32">
-                    <div className={`${boxStyles.box} ${boxStyles.student}`}>
+                    <div className={`${boxStyles.box} ${boxStyles.student}`} onClick={handleStudentSelection}>
                       <div className={boxStyles.logo_container}>
                         <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
                       </div>
@@ -66,7 +82,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className={`${boxStyles.box} ${boxStyles.teacher}`}>
+                    <div className={`${boxStyles.box} ${boxStyles.teacher}`} onClick={handleTeacherSelection}>
                       <div className={boxStyles.logo_container}>
                         <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
                       </div>
@@ -76,7 +92,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className={`${boxStyles.box} ${boxStyles.staff}`}>
+                    <div className={`${boxStyles.box} ${boxStyles.staff}`} onClick={handleStaffSelection}>
                       <div className={boxStyles.logo_container}>
                         <img className={boxStyles.logo} src={boxStyles.ctu_logo}></img>
                       </div>
@@ -93,8 +109,41 @@ export default function Home() {
                 </>);
 
   const display = <>
-                    <Background2 onTransitionEnd={handleTransitionEnd} state={1}/>
-                    {showHomePage && home}
+                    { !isCategorySelected && 
+                        <>
+                          {state == 1 ?
+                            <>
+                              <Background2 onTransitionEnd={handleTransitionEnd} state={state}/>
+                              {showHomePage && home}
+                            </> :
+                            <>
+                              <Background2 state={state}/>
+                              {home}
+                            </>
+                          }  
+                        </>
+                    }
+                    {isCategorySelected && isStudentSelected &&
+                      <>
+                          <Background2 backgroundColor={'from-[#765918] to-[#DCA62C]'} state={2}/>
+                          <Sidebar onSelectionExit={handleSelectionExit}/>
+                          <Header/>
+                      </>
+                    }
+                    {isCategorySelected && isTeacherSelected &&
+                      <>
+                          <Background2 backgroundColor={'from-[#751D18] to-[#DB362D]'} state={2}/>
+                          <Sidebar onSelectionExit={handleSelectionExit}/>
+                          <Header/>
+                      </>
+                    }
+                    {isCategorySelected && isStaffSelected &&
+                      <>
+                          <Background2 backgroundColor={'from-[#322B68] to-[#6355CE]'} state={2}/>
+                          <Sidebar onSelectionExit={handleSelectionExit}/>
+                          <Header/>
+                      </>
+                    }
                   </>
 
   return (

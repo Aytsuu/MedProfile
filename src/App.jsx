@@ -20,7 +20,7 @@ const App = () =>{
     {
       // Default link to sign in page
       path: "/",
-      element: <RecordSelection/>
+      element: <Home/>
     },
     {
       // Link to sign up page

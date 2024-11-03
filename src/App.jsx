@@ -6,9 +6,6 @@ import FPgetEmail from './ForgotPassword-1.jsx'
 import FPgetCode from './EmailVerification.jsx'
 import FPnewPass from './ForgotPassword-2.jsx'
 import Home from './HomePage.jsx';
-import Sidebar from './sidebar/Sidebar.jsx';
-import Registration from './Registration.jsx';
-import Records from './Records.jsx';
 
 const App = () =>{
   // Clean the local storage on initial run
@@ -19,7 +16,7 @@ const App = () =>{
     {
       // Default link to sign in page
       path: "/",
-      element: <Home/>
+      element: <SignIn/>
     },
     {
       // Link to sign up page
@@ -45,6 +42,11 @@ const App = () =>{
       // Link to sign up -- email verification page
       path: "/emailverification",
       element: <FPgetCode type={"EMAIL VERIFICATION"}/>
+    },
+    {
+      // Link to sign up -- home page
+      path: "/home",
+      element: <Home/>
     },
   ])
 

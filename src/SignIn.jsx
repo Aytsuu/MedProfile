@@ -65,11 +65,13 @@ const SignIn = () =>{
                   </div>
                 
                   <div className="mb-[7.5rem] font-outfit"> {/*button to login*/}
-                    <button
-                        type="submit"
-                        className="text-[23px] w-full p-[clamp(0.5rem,0.6vw,1rem)] bg-loginBlue text-white rounded hover:bg-hoverloginBlue">   
-                        Log In
-                    </button>
+                    <Link to='/home'>
+                      <button
+                          type="submit"
+                          className="text-[23px] w-full p-[clamp(0.5rem,0.6vw,1rem)] bg-loginBlue text-white rounded hover:bg-hoverloginBlue">   
+                          Log In
+                      </button>
+                    </Link>
                   </div>
         
                   <div className="font-outfit text-loginTextBlue"> {/*link button to create account*/}

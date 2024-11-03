@@ -7,7 +7,6 @@ import { IoIosPeople } from "react-icons/io";
 import { IoMdFingerPrint } from "react-icons/io";
 import Background2 from './background/Background-2';
 import Header from './Header.jsx';
-import RecordSelection from './RecordSelection.jsx';
 import Sidebar from './sidebar/Sidebar.jsx';
 
 export default function Home() {

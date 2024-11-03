@@ -9,7 +9,6 @@ import Home from './HomePage.jsx';
 import Sidebar from './sidebar/Sidebar.jsx';
 import Registration from './Registration.jsx';
 import Records from './Records.jsx';
-import RecordSelection from './RecordSelection.jsx';
 
 const App = () =>{
   // Clean the local storage on initial run

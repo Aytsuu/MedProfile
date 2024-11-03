@@ -5,6 +5,7 @@ import { HiOutlinePencil } from "react-icons/hi2";
 import { GoX } from "react-icons/go";
 import { GrLinkPrevious } from "react-icons/gr";
 import { IoLogOut } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function Header(){
 
@@ -251,7 +252,7 @@ function Header(){
                                 <div className=" flex items-center flex-col mt-[1rem] ">
                                     <p className="w-[250px] h-[45px] text-loginTextBlue text-[18px] mb-[1rem] font-inter text-center">Are you sure you want to logout?</p>
 
-                                    <button className="mt-[2rem] w-[270px] h-[70px] bg-custom-teal4 font-inter text-[15px] text-white rounded-[10px] drop-shadow-lg outline-none">Yes, Logout Account</button>
+                                    <Link to='/'><button className="mt-[2rem] w-[270px] h-[70px] bg-custom-teal4 font-inter text-[15px] text-white rounded-[10px] drop-shadow-lg outline-none">Yes, Logout Account</button></Link>
                                     <button className="mt-[10px] w-[270px] h-[70px] font-inter text-[15px] text-loginTextBlue outline-none" onClick = {() => {setisSignOut(false); Logout();}}>No, I'm Staying</button>
                                 </div>
                             </div>

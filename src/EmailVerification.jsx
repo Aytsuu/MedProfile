@@ -41,7 +41,7 @@ function Forgotpass({type}) {
 
                                {/* back button and verify button */}
                                 <div className="flex mb-4 justify-center font-outfit">
-                                    <Link to="/forgotpass-1">
+                                    <Link to={type === 'ACCOUNT RECOVERY' ? '/forgotpass-1' : '/signup'}>
                                         <button
                                             type="button"
                                             className="bg-[#C7C7C7] text-white flex items-center justify-center w-[90px] h-[55px] rounded-md mr-4"

@@ -101,12 +101,14 @@ const SignUp = () => {
               </div>
 
               <div className="mb-10 font-outfit text-white"> {/*Button to create account*/}
-                <button to='/verification'
-                  type="submit"
-                  className="text-[23px] w-full p-[clamp(0.5rem,0.6vw,1rem)] bg-loginBlue border-hoverloginBlue rounded hover:bg-hoverloginBlue"
-                >
-                  Sign Up
-                </button>
+                <Link to='/emailverification'>
+                  <button
+                    type="submit"
+                    className="text-[23px] w-full p-[clamp(0.5rem,0.6vw,1rem)] bg-loginBlue border-hoverloginBlue rounded hover:bg-hoverloginBlue"
+                  >
+                    Sign Up
+                  </button>
+                </Link>
               </div>
               
               <div className="font-outfit text-loginTextBlue"> {/*button link to Sign In*/}

@@ -21,7 +21,9 @@ export default function Home() {
   const handleTransitionEnd = () => setShowHomePage(true); // Display home page
   const handleSelectionExit = () => {
     setIsCategorySelected(false)
-    localStorage.removeItem('ReturnFromSelection')
+    isStudentSelected && setIsStudentSelected(false)
+    isTeacherSelected && setIsTeacherSelected(false)
+    isStaffSelected && setIsStaffSelected(false)
     setState(2)
   }
   const handleStudentSelection = () => {setIsStudentSelected(true); setIsCategorySelected(true)}

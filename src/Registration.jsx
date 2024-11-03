@@ -45,7 +45,7 @@ function Registration() {
     };
 
     const register = (
-        <div className="flex items-center justify-center h-screen">
+        <div className="absolute flex items-center justify-center h-screen w-screen">
             <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8">
                 <h3 className="text-xl text-textColor mb-4 font-bold">Student Information</h3>
                 

@@ -31,11 +31,8 @@ function Sidebar({onSelectionExit}){
 
     const [isScanOverlayVisible, setScanOverlayVisible] = useState(false) // State to control overlay visibility
     const [onSelection, setOnSelection] = useState(false)
-    const [toReturn, setToReturn] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
     const [isRecords, setIsRecords] = useState(false)
-
-    localStorage.setItem('ReturnFromSelection', toReturn)
 
     const handleScanClick = () => setScanOverlayVisible(true) // Show the overlay when the icon is clicked
     const handleRegistrationClick = () => {
@@ -56,12 +53,9 @@ function Sidebar({onSelectionExit}){
             setOnSelection(false)
         }
         else {
-            setToReturn(true)
             onSelectionExit()
         }
     }
-
-    const closeOverlay = () => setScanOverlayVisible(false) // Function to hide the overlay
 
     const sideBar = (
         <div className="sidebar fixed top-1/2 left-10 h-auto w-16 m-0 border-2
@@ -72,21 +66,17 @@ function Sidebar({onSelectionExit}){
             <SideBarIcon icon={<BsFillPlusCircleFill size="40"/>} text = "Register" onClick={handleRegistrationClick} />
             <SideBarIcon icon={<MdGroups size="40"/>} text="Records" onClick={handleRecordsClick} />
             <SideBarIcon icon={<IoFingerPrint size="40"/>} text="Scan Fingerprint" onClick={handleScanClick}/>
-            <SideBarIcon icon={<BsArrowLeftCircleFill size="40"/>} text="Exit" onClick={handleReturnClick}/>
+            <SideBarIcon icon={<BsArrowLeftCircleFill size="40"/>} text="Go Back" onClick={handleReturnClick}/>
             
         </div>
     );
     
     return (
-        <>  { !toReturn &&
-                <>
-                    {isRegister && <Registration/>}
-                    {isRecords && <Records/>}
-                    {sideBar}
-                    {/* {isScanOverlayVisible && <ScanOverlay onClose={closeOverlay} />} Render the overlay conditionally */}
-                </>
-            }
-        </>
+            <>
+                {isRegister && <Registration/>}
+                {isRecords && <Records/>}
+                {sideBar}
+            </>
     );
 }
 

@@ -130,17 +130,13 @@ function Registration() {
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
                         </div>
                     </div>
-                    <div className="flex flex-row h-full items-end">
-                        <button type="button" className="flex h-[3rem] w-[3.5rem] m-2 bg-[#D9D8D8] border-1 shadow-lg drop-shadow-lg rounded-md hover:bg-[#C7C7C7] hover:rounded-lg items-center justify-center">
-                            <GrLinkPrevious className="text-darkGrayColor h-6 w-6" />
-                        </button>
-                        
+                    <div className="flex flex-row h-full items-end"> 
                         <button type="submit"
-                            className="flex h-[3rem] w-[8rem] m-2 bg-custom-teal3 rounded-md items-center justify-center border-1 shadow-lg drop-shadow-lg
+                            className="flex h-[3rem] w-[9rem] m-2 bg-custom-teal3 rounded-md items-center justify-center border-1 shadow-lg drop-shadow-lg
                                 hover:bg-hoverloginBlue ">
-                            <div className="flex items-center space-x-3 pr-4 pl-4">
-                                <h1 className="text-white font-semibold font-outfit">Next</h1>
-                                <IoIosArrowDroprightCircle className="text-white h-[1.5rem] w-[1.5rem]" />
+                            <div className="flex items-center pr-4 pl-4">
+                                <h1 className="text-white text-[20px] font-medium font-outfit ml-3">Next</h1>
+                                <IoIosArrowDroprightCircle className="text-white h-[1.5rem] w-[1.5rem] ml-[1.5rem]" />
                             </div>
                         </button>
                     </div>

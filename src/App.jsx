@@ -6,7 +6,6 @@ import FPgetEmail from './ForgotPassword-1.jsx'
 import FPgetCode from './EmailVerification.jsx'
 import FPnewPass from './ForgotPassword-2.jsx'
 import Home from './HomePage.jsx';
-import Registration from './Registration.jsx';
 
 const App = () =>{
   // Clean the local storage on initial run

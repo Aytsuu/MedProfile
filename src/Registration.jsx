@@ -42,7 +42,7 @@ function Registration({form}) {
 
     const handleDateChange = (date) => {
         const dateValue = new Date(date); // Attempt to parse the date
-        const formattedDate = isNaN(dateValue) ? 'Invalid date' : format(dateValue, 'MM/dd/yyyy');
+        const formattedDate = format(dateValue, 'MM/dd/yyyy');
         setFormData((prevData) => ({ ...prevData, dateOfBirth: formattedDate }));
         setDatePickerOpen(false);
     };

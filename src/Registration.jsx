@@ -4,6 +4,7 @@ import { GrLinkPrevious } from "react-icons/gr";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { format } from 'date-fns'
 
 function Registration({form}) {
     
@@ -40,7 +41,9 @@ function Registration({form}) {
     };
 
     const handleDateChange = (date) => {
-        setFormData((prevData) => ({ ...prevData, dateOfBirth: date }));
+        const dateValue = new Date(date); // Attempt to parse the date
+        const formattedDate = isNaN(dateValue) ? 'Invalid date' : format(dateValue, 'MM/dd/yyyy');
+        setFormData((prevData) => ({ ...prevData, dateOfBirth: formattedDate }));
         setDatePickerOpen(false);
     };
 

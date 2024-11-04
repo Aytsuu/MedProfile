@@ -29,7 +29,6 @@ const sideBarStyle = {
 
 function Sidebar({onSelectionExit, type}){    
 
-    const [isScanOverlayVisible, setScanOverlayVisible] = useState(false) // State to control overlay visibility
     const [onSelection, setOnSelection] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
     const [isRecords, setIsRecords] = useState(false)

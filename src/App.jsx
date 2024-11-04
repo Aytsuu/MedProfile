@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import './App.css'
 import SignIn from './SignIn.jsx'
 import SignUp from './SignUp.jsx'
 import FPgetEmail from './ForgotPassword-1.jsx'

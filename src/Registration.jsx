@@ -316,16 +316,11 @@ function Registration({form}) {
                             <input type="text" name="Id" placeholder="Staff Id" value={formData.staffId} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
 
-
                             <input type="email" name="emailAddress" placeholder="Email Address" value={formData.emailAddress} onChange={handleChange}
-                            className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
+                            className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/3 outline-none" required disabled={inputsLocked}/>
 
-                        </div>
-
-                        <div className="flex flex-row space-x-3 mt-6">
                             <input type="text" name="address" placeholder="Address (Street/Province/City)" value={formData.address} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
-    
                         </div>
 
                         <p className="text-loginTextBlue mt-5 mb-2 text-[17px]">In case of Emergency, contact this person:</p>

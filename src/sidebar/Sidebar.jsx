@@ -27,7 +27,7 @@ const sideBarStyle = {
     
                     }
 
-function Sidebar({onSelectionExit}){    
+function Sidebar({onSelectionExit, type}){    
 
     const [isScanOverlayVisible, setScanOverlayVisible] = useState(false) // State to control overlay visibility
     const [onSelection, setOnSelection] = useState(false)
@@ -73,7 +73,7 @@ function Sidebar({onSelectionExit}){
     
     return (
             <>
-                {isRegister && <Registration/>}
+                {isRegister && <Registration form={type}/>}
                 {isRecords && <Records/>}
                 {sideBar}
             </>

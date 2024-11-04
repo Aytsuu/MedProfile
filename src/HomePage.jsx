@@ -129,21 +129,21 @@ export default function Home() {
                     {isCategorySelected && isStudentSelected &&
                       <>
                           <Background2 backgroundColor={'from-[#765918] to-[#DCA62C]'} state={2}/>
-                          <Sidebar onSelectionExit={handleSelectionExit}/>
+                          <Sidebar onSelectionExit={handleSelectionExit} type='studentRegister'/>
                           <Header/>
                       </>
                     }
                     {isCategorySelected && isTeacherSelected &&
                       <>
                           <Background2 backgroundColor={'from-[#751D18] to-[#DB362D]'} state={2}/>
-                          <Sidebar onSelectionExit={handleSelectionExit}/>
+                          <Sidebar onSelectionExit={handleSelectionExit} type='teacherRegister'/>
                           <Header/>
                       </>
                     }
                     {isCategorySelected && isStaffSelected &&
                       <>
                           <Background2 backgroundColor={'from-[#322B68] to-[#6355CE]'} state={2}/>
-                          <Sidebar onSelectionExit={handleSelectionExit}/>
+                          <Sidebar onSelectionExit={handleSelectionExit} type='staffRegister'/>
                           <Header/>
                       </>
                     }

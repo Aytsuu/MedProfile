@@ -5,7 +5,6 @@ import { MdGroups} from "react-icons/md";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { IoFingerPrint } from "react-icons/io5";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Registration from "../Registration";
 import Records from "../Records";

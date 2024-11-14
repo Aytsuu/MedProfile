@@ -41,8 +41,6 @@ function Registration({form}) {
         motherOccupation: '',
         motherEmailAddress: '',
         motherContact: '',
-        noOfSibling: 0,
-        siblings: [],
         
     });
 
@@ -85,13 +83,103 @@ function Registration({form}) {
         console.log("Submitted data:", formData);
     };
 
+    const ParentInformation =
+    <>
+        {/*FATHER INFORMATION FIELDS*/}
+        <div className="flex flex-col mt-6">
+            <h1 className="font-outfit font-normal text-loginTextBlue text-[20px]">Father's Information</h1>
+            <div className="flex flex-row space-x-3 mt-3">
+                <input type="text" name="fatherFName" placeholder="First Name" value={formData.fatherFName} onChange={handleChange}
+                    className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-5/6 outline-none" required  disabled={inputsLocked}/>
+                <input type="text" name="fatherLName" placeholder="Last Name" value={formData.fatherLName} onChange={handleChange}
+                    className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-5/6 outline-none" required disabled={inputsLocked}/>
+                <input type="text" name="fatherMI" placeholder="M.I" value={formData.fatherMI} onChange={handleChange}
+                    className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/12 outline-none" required disabled={inputsLocked}/>
+            </div>
+        </div>
+
+        <div className="flex flex-row space-x-3 mt-6">
+            <input type="text" placeholder="MM/DD/YYYY" value={formData.fatherDOB} readOnly
+                className="flex border border-hoverloginBlue p-2 rounded-md h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
+            <button name="fatherDOB" type="button" className="flex justify-cente items-center border border-hoverloginBlue rounded-md h-[45px] p-2 outline-none"
+                onClick={() => setFatherDatePickerOpen(!fatherDatePickerOpen)}>
+                <MdOutlineCalendarMonth size="20" className="text-loginTextBlue" disabled={inputsLocked}/>
+            </button>
+            {fatherDatePickerOpen && (
+                <div className="absolute z-1 left-52 top-[35.7rem]">
+                    <DatePicker selected={formData.fatherDOB} onChange={handleFatherDateChange} inline
+                        onClickOutside={() => setFatherDatePickerOpen(false)} className="border border-hoverloginBlue p-2 rounded-md" disabled={inputsLocked}/>
+                </div>
+            )}
+            <input type="text" name="fatherPOB" placeholder="Place of Birth" value={formData.fatherPOB} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
+            <input type="text" name="fatherCitizenship" placeholder="Citizenship" value={formData.fatherCitizenship} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+            <input type="email" name="fatherReligion" placeholder="Religion" value={formData.fatherReligion} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+        </div>
+
+        <div className="flex flex-row space-x-3 mt-6">
+            <input type="text" name="fatherOccupation" placeholder="occupation" value={formData.fatherOccupation} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>          
+            <input type="email" name="fatherEmailAddress" placeholder="Email Address" value={formData.fatherEmailAddress} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-[35%] outline-none" required disabled={inputsLocked}/>
+            <input type="text" name="fatherContact" placeholder="contact" value={formData.fatherContact} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+        </div>
+        
+        {/*MOTHER INFORMATION FIELDS*/}
+        <div className="flex flex-col mt-6">
+            <h1 className="font-outfit font-normal text-loginTextBlue text-[20px]">Mother's Information</h1>
+            <div className="flex flex-row space-x-3 mt-3">
+                <input type="text" name="motherFName" placeholder="First Name" value={formData.motherFName} onChange={handleChange}
+                    className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-5/6 outline-none" required  disabled={inputsLocked}/>
+                <input type="text" name="motherLName" placeholder="Last Name" value={formData.motherLName} onChange={handleChange}
+                    className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-5/6 outline-none" required disabled={inputsLocked}/>
+                <input type="text" name="motherMI" placeholder="M.I" value={formData.motherMI} onChange={handleChange}
+                    className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/12 outline-none" required disabled={inputsLocked}/>
+            </div>
+        </div>
+
+        <div className="flex flex-row space-x-3 mt-6">
+            <input type="text" placeholder="MM/DD/YYYY" value={formData.motherDOB} readOnly
+                className="flex border border-hoverloginBlue p-2 rounded-md h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
+            <button name="fatherDOB" type="button" className="flex justify-cente items-center border border-hoverloginBlue rounded-md h-[45px] p-2 outline-none"
+                onClick={() => setMotherDatePickerOpen(!motherDatePickerOpen)}>
+                <MdOutlineCalendarMonth size="20" className="text-loginTextBlue" disabled={inputsLocked}/>
+            </button>
+            {motherDatePickerOpen && (
+                <div className="absolute z-1 left-52 top-[51.3rem]">
+                    <DatePicker selected={formData.motherDOB} onChange={handleMotherDateChange} inline
+                        onClickOutside={() => setMotherDatePickerOpen(false)} className="border border-hoverloginBlue p-2 rounded-md" disabled={inputsLocked}/>
+                </div>
+            )}
+            <input type="text" name="motherPOB" placeholder="Place of Birth" value={formData.motherPOB} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
+            <input type="text" name="motherCitizenship" placeholder="Citizenship" value={formData.motherCitizenship} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+            <input type="email" name="motherReligion" placeholder="Religion" value={formData.motherReligion} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+        </div>
+
+        <div className="flex flex-row space-x-3 mt-6">
+            <input type="text" name="motherOccupation" placeholder="occupation" value={formData.motherOccupation} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>          
+            <input type="email" name="motherEmailAddress" placeholder="Email Address" value={formData.motherEmailAddress} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-[35%] outline-none" required disabled={inputsLocked}/>
+            <input type="text" name="motherContact" placeholder="contact" value={formData.motherContact} onChange={handleChange}
+                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+        </div>
+    </>
+
+
     const studentRegister = (
         <div className="absolute flex items-center justify-center h-screen w-screen">
             <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
                 <h3 className="text-[25px] text-loginTextBlue mb-4 font-medium font-outfit">Student Information</h3>
                 
                 <form method="POST" onSubmit={handleSubmit} className="flex flex-col h-[35vw]">
-                    <div className={`h-[70+${formData.noOfSibling}rem]`}>
+                    <div className={`h-[70rem]`}>
                         <div className="flex flex-row space-x-3">
                             <input type="text" name="fName" placeholder="First Name" value={formData.fName} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-5/6 outline-none" required  disabled={inputsLocked}/>
@@ -271,6 +359,8 @@ function Registration({form}) {
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
                         </div>     
                     </div>
+
+                    {ParentInformation}
                     
                     <div className="flex flex-col h-[8rem] items-start mt-7"> 
                         <button type="submit"
@@ -289,11 +379,11 @@ function Registration({form}) {
 
     const teacherRegister = (
         <div className="absolute flex items-center justify-center h-screen w-screen">
-            <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8">
+            <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
                 <h3 className="text-[25px] text-loginTextBlue mb-4 font-medium font-outfit">Teacher Information</h3>
                 
                 <form method="POST" onSubmit={handleSubmit} className="flex flex-col h-[35vw]">
-                    <div className="h-auto">
+                    <div className="h-[70rem]">
                         <div className="flex flex-row space-x-3">
                             <input type="text" name="fName" placeholder="First Name" value={formData.fName} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-5/6 outline-none" required  disabled={inputsLocked}/>
@@ -359,11 +449,12 @@ function Registration({form}) {
     
                         </div>
 
+                        {ParentInformation}
 
                     </div>
-                    <div className="flex flex-row h-full items-end"> 
+                    <div className="flex flex-col h-[8rem] items-start mt-7"> 
                         <button type="submit"
-                            className="flex h-[3rem] w-[9rem] m-2 bg-custom-teal3 rounded-md items-center justify-center border-1 shadow-lg drop-shadow-lg
+                            className="flex h-[3rem] w-[9rem] bg-custom-teal3 rounded-md mb-[2.5rem] items-center justify-center border-1 shadow-lg drop-shadow-lg
                                 hover:bg-hoverloginBlue ">
                             <div className="flex items-center pr-4 pl-4">
                                 <h1 className="text-white text-[20px] font-medium font-outfit ml-3">Next</h1>
@@ -379,11 +470,11 @@ function Registration({form}) {
 
     const staffRegister = (
         <div className="absolute flex items-center justify-center h-screen w-screen">
-            <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8">
+            <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
                 <h3 className="text-[25px] text-loginTextBlue mb-4 font-medium font-outfit">Staff Information</h3>
                 
                 <form method="POST" onSubmit={handleSubmit} className="flex flex-col h-[35vw]">
-                    <div className="h-auto">
+                    <div className="h-[70rem]">
                         <div className="flex flex-row space-x-3">
                             <input type="text" name="fName" placeholder="First Name" value={formData.fName} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-5/6 outline-none" required  disabled={inputsLocked}/>
@@ -440,11 +531,12 @@ function Registration({form}) {
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
                         </div>
                         
-                        
+                        {ParentInformation}
+
                     </div>
-                    <div className="flex flex-row h-full items-end"> 
+                    <div className="flex flex-row h-[8rem] items-start mt-7"> 
                         <button type="submit"
-                            className="flex h-[3rem] w-[9rem] m-2 bg-custom-teal3 rounded-md items-center justify-center border-1 shadow-lg drop-shadow-lg
+                            className="flex h-[3rem] w-[9rem] bg-custom-teal3 rounded-md mb-[2.5rem] items-center justify-center border-1 shadow-lg drop-shadow-lg
                                 hover:bg-hoverloginBlue ">
                             <div className="flex items-center pr-4 pl-4">
                                 <h1 className="text-white text-[20px] font-medium font-outfit ml-3">Next</h1>
@@ -455,6 +547,7 @@ function Registration({form}) {
                 </form>
             </div>
         </div>
+
     );
 
     switch(form){

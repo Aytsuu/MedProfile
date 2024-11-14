@@ -98,7 +98,8 @@ function Registration({form}) {
             </div>
         </div>
 
-        <div className="flex flex-row space-x-3 mt-6">
+        <p className="text-loginTextBlue mt-3 font-kiteOne text-[13px]">* Date of Birth</p>
+        <div className="flex flex-row space-x-3">
             <input type="text" placeholder="MM/DD/YYYY" value={formData.fatherDOB} readOnly
                 className="flex border border-hoverloginBlue p-2 rounded-md h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
             <button name="fatherDOB" type="button" className="flex justify-cente items-center border border-hoverloginBlue rounded-md h-[45px] p-2 outline-none"
@@ -140,8 +141,9 @@ function Registration({form}) {
                     className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/12 outline-none" required disabled={inputsLocked}/>
             </div>
         </div>
-
-        <div className="flex flex-row space-x-3 mt-6">
+        
+        <p className="text-loginTextBlue mt-3 font-kiteOne text-[13px]">* Date of Birth</p>
+        <div className="flex flex-row space-x-3">
             <input type="text" placeholder="MM/DD/YYYY" value={formData.motherDOB} readOnly
                 className="flex border border-hoverloginBlue p-2 rounded-md h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
             <button name="fatherDOB" type="button" className="flex justify-cente items-center border border-hoverloginBlue rounded-md h-[45px] p-2 outline-none"
@@ -402,18 +404,22 @@ function Registration({form}) {
                                 <MdOutlineCalendarMonth size="20" className="text-loginTextBlue" disabled={inputsLocked}/>
                             </button>
                             {datePickerOpen && (
-                                <div className="absolute z-1 left-52 top-44">
+                                <div className="absolute z-1 left-52 top-[11.5rem]">
                                     <DatePicker selected={formData.DOB} onChange={handleDateChange} inline
                                         onClickOutside={() => setDatePickerOpen(false)} className="border border-hoverloginBlue p-2 rounded-md" disabled={inputsLocked}/>
                                 </div>
                             )}
 
-                            <select name="department" value={formData.department} onChange={handleChange}
-                                className="flex border-2 border-textColor rounded-md h-[45px] pl-2 w-1/2 text-loginTextBlue outline-none" required disabled={inputsLocked}>
-                                <option disabled value="">Department</option>
-                                <option value="College of Technology">College of Technology</option>
-                            </select>
+                            <input type="text" name="POB" placeholder="Place of Birth" value={formData.POB} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
+                            <input type="text" name="citizenship" placeholder="Citizenship" value={formData.citizenship} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+                            <input type="email" name="religion" placeholder="Religion" value={formData.religion} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+                        </div>
 
+                        <div className="flex flex-row space-x-3 mt-6">
+  
                             <select name="sex" value={formData.sex} onChange={handleChange}
                                 className="flex border-2 border-textColor rounded-md h-[45px] pl-2 w-1/12 text-loginTextBlue outline-none" required disabled={inputsLocked}>
                                 <option disabled value="">Sex</option>
@@ -429,11 +435,23 @@ function Registration({form}) {
                                 <option value="Female">Married</option>
                                 <option value="Other">Widowed</option>
                             </select>
+
+                            <input type="text" name="address" placeholder="Address (Street/Province/City)" value={formData.address} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-[70%] outline-none" required disabled={inputsLocked}/>
+
+                            <input type="text" name="zipCode" placeholder="Zip Code" value={formData.zipCode} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
                         </div>
 
                         <div className="flex flex-row space-x-3 mt-6">
                             <input type="text" name="Id" placeholder="Teacher Id" value={formData.studentId} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
+
+                            <select name="department" value={formData.department} onChange={handleChange}
+                                className="flex border-2 border-textColor rounded-md h-[45px] pl-2 w-1/2 text-loginTextBlue outline-none" required disabled={inputsLocked}>
+                                <option disabled value="">Department</option>
+                                <option value="College of Technology">College of Technology</option>
+                            </select>
 
                             <input type="text" name="contact" placeholder="Contact" value={formData.contact} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
@@ -441,12 +459,6 @@ function Registration({form}) {
                             <input type="email" name="emailAddress" placeholder="Email Address" value={formData.emailAddress} onChange={handleChange}
                             className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
 
-                        </div>
-
-                        <div className="flex flex-row space-x-3 mt-6">
-                            <input type="text" name="address" placeholder="Address (Street/Province/City)" value={formData.address} onChange={handleChange}
-                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
-    
                         </div>
 
                         {ParentInformation}
@@ -493,14 +505,21 @@ function Registration({form}) {
                                 <MdOutlineCalendarMonth size="20" className="text-loginTextBlue" disabled={inputsLocked}/>
                             </button>
                             {datePickerOpen && (
-                                <div className="absolute z-1 left-52 top-44">
+                                <div className="absolute z-1 left-52 top-[11.5rem]">
                                     <DatePicker selected={formData.DOB} onChange={handleDateChange} inline
                                         onClickOutside={() => setDatePickerOpen(false)} className="border border-hoverloginBlue p-2 rounded-md" disabled={inputsLocked}/>
                                 </div>
                             )}
 
-                            <input type="text" name="contact" placeholder="Contact" value={formData.contact} onChange={handleChange}
+                            <input type="text" name="POB" placeholder="Place of Birth" value={formData.POB} onChange={handleChange}
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
+                            <input type="text" name="citizenship" placeholder="Citizenship" value={formData.citizenship} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+                            <input type="email" name="religion" placeholder="Religion" value={formData.religion} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
+                        </div>
+                        
+                        <div className="flex flex-row space-x-3 mt-6">
 
                             <select name="sex" value={formData.sex} onChange={handleChange}
                                 className="flex border-2 border-textColor rounded-md h-[45px] pl-2 w-1/12 text-loginTextBlue outline-none" required disabled={inputsLocked}>
@@ -517,6 +536,13 @@ function Registration({form}) {
                                 <option value="Female">Married</option>
                                 <option value="Other">Widowed</option>
                             </select>
+
+                            <input type="text" name="address" placeholder="Address (Street/Province/City)" value={formData.address} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-[70%] outline-none" required disabled={inputsLocked}/>
+
+                            <input type="text" name="zipCode" placeholder="Zip Code" value={formData.zipCode} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
+
                         </div> 
 
                         <div className="flex flex-row space-x-3 mt-6">
@@ -525,10 +551,10 @@ function Registration({form}) {
                                 className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/6 outline-none" required disabled={inputsLocked}/>
 
                             <input type="email" name="emailAddress" placeholder="Email Address" value={formData.emailAddress} onChange={handleChange}
-                            className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/3 outline-none" required disabled={inputsLocked}/>
+                            className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/3 outline-none" required disabled={inputsLocked}/>               
 
-                            <input type="text" name="address" placeholder="Address (Street/Province/City)" value={formData.address} onChange={handleChange}
-                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/2 outline-none" required disabled={inputsLocked}/>
+                            <input type="text" name="contact" placeholder="Contact" value={formData.contact} onChange={handleChange}
+                                className="flex border border-hoverloginBlue p-2 rounded-md top-4 h-[45px] w-1/4 outline-none" required disabled={inputsLocked}/>
                         </div>
                         
                         {ParentInformation}

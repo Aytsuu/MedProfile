@@ -16,7 +16,6 @@ function Records()  {
                     </div>
                 </div>
                 <RecordData ID={123123} Fname="Josef Huelende" Lname="Virtucio" MI="S."  onClick={() => navigate('/profile')}></RecordData>
-
             </div>
         </div>
     )

@@ -1,10 +1,10 @@
 import { MdOutlineCalendarMonth} from "react-icons/md";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { GrLinkPrevious } from "react-icons/gr";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from 'date-fns'
+import ScanOverlay from "./ScanOverlay";
 
 function Registration({form}) {
     
@@ -47,6 +47,7 @@ function Registration({form}) {
     const [datePickerOpen, setDatePickerOpen] = useState(false);
     const [fatherDatePickerOpen, setFatherDatePickerOpen] = useState(false)
     const [motherDatePickerOpen, setMotherDatePickerOpen] = useState(false)
+    const [isScanOverlayVisible, setScanOverlayVisible] = useState(false)
     const [inputsLocked, setInputsLocked] = useState(false);  // disables the input fields
 
     const handleChange = (e) => {
@@ -80,8 +81,10 @@ function Registration({form}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Submitted data:", formData);
+        setScanOverlayVisible(true)
     };
+
+    const closeScanOverlay = () => setScanOverlayVisible(false)
 
     const ParentInformation =
     <>
@@ -176,8 +179,8 @@ function Registration({form}) {
 
 
     const studentRegister = (
-        <div className="absolute flex items-center justify-center h-screen w-screen">
-            <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
+        <div className="absolute flex items-center justify-center h-[75%] w-[70%] top-[20vh] translate-x-[20%]">
+            <div className="relative h-full w-full border-2 rounded-lg bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
                 <h3 className="text-[25px] text-loginTextBlue mb-4 font-medium font-outfit">Student Information</h3>
                 
                 <form method="POST" onSubmit={handleSubmit} className="flex flex-col h-[35vw]">
@@ -365,7 +368,7 @@ function Registration({form}) {
                     {ParentInformation}
                     
                     <div className="flex flex-col h-[8rem] items-start mt-7"> 
-                        <button type="submit"
+                        <button type="submit" onClick={handleSubmit}
                             className="flex h-[3rem] w-[9rem] bg-custom-teal3 rounded-md mb-[2.5rem] items-center justify-center border-1 shadow-lg drop-shadow-lg
                                 hover:bg-hoverloginBlue ">
                             <div className="flex items-center pr-4 pl-4">
@@ -380,8 +383,8 @@ function Registration({form}) {
     );
 
     const teacherRegister = (
-        <div className="absolute flex items-center justify-center h-screen w-screen">
-            <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
+        <div className="absolute flex items-center justify-center h-[75%] w-[70%] top-[20vh] translate-x-[20%]">
+            <div className="relative h-full w-full border-2 rounded-lg bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
                 <h3 className="text-[25px] text-loginTextBlue mb-4 font-medium font-outfit">Teacher Information</h3>
                 
                 <form method="POST" onSubmit={handleSubmit} className="flex flex-col h-[35vw]">
@@ -465,7 +468,7 @@ function Registration({form}) {
 
                     </div>
                     <div className="flex flex-col h-[8rem] items-start mt-7"> 
-                        <button type="submit"
+                        <button type="submit" onClick={handleSubmit}
                             className="flex h-[3rem] w-[9rem] bg-custom-teal3 rounded-md mb-[2.5rem] items-center justify-center border-1 shadow-lg drop-shadow-lg
                                 hover:bg-hoverloginBlue ">
                             <div className="flex items-center pr-4 pl-4">
@@ -481,8 +484,8 @@ function Registration({form}) {
 
 
     const staffRegister = (
-        <div className="absolute flex items-center justify-center h-screen w-screen">
-            <div className="relative h-3/4 w-4/6 border-2 rounded-lg top-16 bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
+        <div className="absolute flex items-center justify-center h-[75%] w-[70%] top-[20vh] translate-x-[20%]">
+            <div className="relative h-full w-full border-2 rounded-lg bg-white shadow-lg drop-shadow-md p-8 overflow-y-auto">
                 <h3 className="text-[25px] text-loginTextBlue mb-4 font-medium font-outfit">Staff Information</h3>
                 
                 <form method="POST" onSubmit={handleSubmit} className="flex flex-col h-[35vw]">
@@ -561,7 +564,7 @@ function Registration({form}) {
 
                     </div>
                     <div className="flex flex-row h-[8rem] items-start mt-7"> 
-                        <button type="submit"
+                        <button type="submit" onClick={handleSubmit}
                             className="flex h-[3rem] w-[9rem] bg-custom-teal3 rounded-md mb-[2.5rem] items-center justify-center border-1 shadow-lg drop-shadow-lg
                                 hover:bg-hoverloginBlue ">
                             <div className="flex items-center pr-4 pl-4">
@@ -577,9 +580,21 @@ function Registration({form}) {
     );
 
     switch(form){
-        case 'studentRegister': return studentRegister;
-        case 'teacherRegister': return teacherRegister;
-        case 'staffRegister': return staffRegister;
+        case 'studentRegister': 
+            return (<>
+                {studentRegister}
+                {isScanOverlayVisible && <ScanOverlay onClose={closeScanOverlay} type={"store"} />}
+            </>);
+        case 'teacherRegister': 
+        return (<>
+            {teacherRegister}
+            {isScanOverlayVisible && <ScanOverlay onClose={closeScanOverlay} type={"store"} />}
+        </>);
+        case 'staffRegister': 
+        return (<>
+            {staffRegister}
+            {isScanOverlayVisible && <ScanOverlay onClose={closeScanOverlay} type={"store"} />}
+        </>);
     }
 }
 

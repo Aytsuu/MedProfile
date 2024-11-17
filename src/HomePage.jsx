@@ -4,7 +4,6 @@ import CTU_LOGO from './assets/CTU_LOGO.png'
 import { RiGraduationCapFill } from "react-icons/ri"
 import { PiChalkboardTeacherFill } from "react-icons/pi"
 import { IoIosPeople } from "react-icons/io";
-import { IoMdFingerPrint } from "react-icons/io";
 import Background2 from './background/Background-2';
 import Header from './Header.jsx';
 import Sidebar from './sidebar/Sidebar.jsx';
@@ -66,13 +65,6 @@ export default function Home() {
     ctu_logo: CTU_LOGO,
   }
 
-  // Fingerprint-Button style
-  const buttonStyles = {
-    button:`absolute bottom-10 flex items-center gap-1 rounded-md bg-white py-2 px-4 border border-transparent text-center text-md text-[#033e44] 
-          transition-all shadow-md hover:shadow-lg focus:shadow-none active:bg-slate-700 hover:bg-slate-100 active:shadow-none disabled:pointer-events-none 
-          disabled:opacity-50 disabled:shadow-none ml-2" type="button`,
-  }
-
   const home = (<>
                   <div className="absolute font-outfit flex gap-[2.5vw] max-[500px]:flex-col my-auto bg-none h-screen w-screen items-center justify-center px-32">
                     <div className={`${boxStyles.box} ${boxStyles.student}`} onClick={handleStudentSelection}>
@@ -104,9 +96,6 @@ export default function Home() {
                         <p>Staff</p>
                       </div>
                     </div>
-
-                    <button className={buttonStyles.button}>Scan fingerprint <IoMdFingerPrint className="text-4xl" /> </button>
-
                   </div>
                   <Header/>
                 </>);
@@ -129,22 +118,22 @@ export default function Home() {
                     {isCategorySelected && isStudentSelected &&
                       <>
                           <Background2 backgroundColor={'from-[#765918] to-[#DCA62C]'} state={2}/>
-                          <Sidebar onSelectionExit={handleSelectionExit} type='studentRegister'/>
                           <Header/>
+                          <Sidebar onSelectionExit={handleSelectionExit} type='studentRegister'/>
                       </>
                     }
                     {isCategorySelected && isTeacherSelected &&
                       <>
                           <Background2 backgroundColor={'from-[#751D18] to-[#DB362D]'} state={2}/>
-                          <Sidebar onSelectionExit={handleSelectionExit} type='teacherRegister'/>
                           <Header/>
+                          <Sidebar onSelectionExit={handleSelectionExit} type='teacherRegister'/>
                       </>
                     }
                     {isCategorySelected && isStaffSelected &&
                       <>
                           <Background2 backgroundColor={'from-[#322B68] to-[#6355CE]'} state={2}/>
-                          <Sidebar onSelectionExit={handleSelectionExit} type='staffRegister'/>
                           <Header/>
+                          <Sidebar onSelectionExit={handleSelectionExit} type='staffRegister'/>
                       </>
                     }
                   </>

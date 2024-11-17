@@ -94,7 +94,7 @@ function Forgotpass() {
                                             <GrLinkPrevious className='text-darkGrayColor h-6 w-6 my-auto'/>
                                         </button>  
                                     </Link>
-                                    <Link>
+                                    <Link to="/">
                                         <button
                                             type="button"
                                             className="text-[23px] bg-[#049CAA] text-white rounded-md hover:bg-hoverloginBlue w-[304px] h-[55px] flex items-center justify-center"

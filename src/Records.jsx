@@ -24,7 +24,7 @@ function Records()  {
 }
 
 const RecordData = ({ID, Fname, Lname, MI, onClick}) => (
-    <div className="flex flex-col h-[67px] w-80% rounded-[10px] bg-white border-2 shadow-lg drop-shadow-md p-7 mb-1 hover:bg-orange-300" onClick={onClick}> 
+    <div className="flex flex-col h-[67px] w-80% rounded-[10px] bg-white border-2 shadow-lg drop-shadow-md p-7 mb-1 cursor-pointer hover:bg-orange-300"> 
         <div className="flex items-center w-full h-full">
             <h2 className="font-regular font-outfit w-[7rem] text-center text-loginTextBlue text-[16px]">{ID}</h2>
             <h2 className="font-regular font-outfit w-[30rem] text-center text-loginTextBlue text-[16px]">{Fname}</h2>

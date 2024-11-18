@@ -176,7 +176,7 @@ function Header(){
                                                             <p className="font-outfit text-teal-900 text-[18px] mt-[20px]">Change Username</p>
                                                             <input className="w-[280px] h-[42px] rounded-[20px] font-outfit text-14px text-teal-900/50 border placeholder-teal-900/50 mt-[20px] p-[10px]" placeholder="Password"></input>
                                                             <button><img className="absolute right-[55px] top-[80px]"/></button>
-                                                            <input className="w-[280px] h-[42px] rounded-[20px] font-outfit text-14px text-teal-900/50 border placeholder-teal-900/50 mt-[10px] p-[10px]" placeholder="Username"></input>
+                                                            <input className="w-[280px] h-[42px] rounded-[20px] font-outfit text-14px text-teal-900/50 border placeholder-teal-900/50 mt-[10px] p-[10px]" placeholder="New Username"></input>
     
                                                             <div className="flex items-center justify-end space-x-3 35px] mt-[35px] w-full mr-[40px]">
                                                                 <button className={backbutton} onClick={() => {PasswordandUsernameUI(); setisChangeUsername(false);}}>

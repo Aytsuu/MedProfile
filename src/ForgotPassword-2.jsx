@@ -30,6 +30,8 @@ function Forgotpass() {
         setConfPassword(e.target.value)
     }
 
+    const onReturnSignIn = () => localStorage.setItem('Return', true) // Function to store key value pair to local storage
+
     //Forgot Password input field styles
     const FPfieldStyle = "mb-7 font-outfit relative";
     const FPfieldContentStyle = "w-full p-[clamp(0.5rem,0.7vw,1rem)] pl-10 border border-hoverloginBlue rounded outline-none";
@@ -94,7 +96,7 @@ function Forgotpass() {
                                             <GrLinkPrevious className='text-darkGrayColor h-6 w-6 my-auto'/>
                                         </button>  
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/" onClick={onReturnSignIn}>
                                         <button
                                             type="button"
                                             className="text-[23px] bg-[#049CAA] text-white rounded-md hover:bg-hoverloginBlue w-[304px] h-[55px] flex items-center justify-center"
